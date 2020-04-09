@@ -48,7 +48,7 @@ Flags:
 
 var (
 	holder    = flag.String("c", "Google LLC", "copyright holder")
-	license   = flag.String("l", "apache", "license type: apache, bsd, mit")
+	license   = flag.String("l", "apache", "license type: apache, bsd, mit, gpl3-only, gpl3-or-later")
 	licensef  = flag.String("f", "", "license file")
 	year      = flag.String("y", fmt.Sprint(time.Now().Year()), "copyright year(s)")
 	verbose   = flag.Bool("v", false, "verbose mode: print the name of the files that are modified")

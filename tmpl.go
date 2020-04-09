@@ -29,6 +29,8 @@ func init() {
 	licenseTemplate["apache"] = template.Must(template.New("").Parse(tmplApache))
 	licenseTemplate["mit"] = template.Must(template.New("").Parse(tmplMIT))
 	licenseTemplate["bsd"] = template.Must(template.New("").Parse(tmplBSD))
+	licenseTemplate["gpl3-only"] = template.Must(template.New("").Parse(tmplGPL3only))
+	licenseTemplate["gpl3-or-later"] = template.Must(template.New("").Parse(tmplGPL3orLater))
 }
 
 type copyrightData struct {
@@ -70,7 +72,9 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.`
+limitations under the License.
+
+SPDX-License-Identifier: Apache-2.0`
 
 const tmplBSD = `Copyright (c) {{.Year}} {{.Holder}} All rights reserved.
 Use of this source code is governed by a BSD-style
@@ -93,4 +97,37 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+SPDX-License-Identifier: MIT`
+
+const tmplGPL3only = `Copyright (c) {{.Year}} {{.Holder}}
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, version 3.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
+
+SPDX-License-Identifier: GPL-3.0-only`
+
+const tmplGPL3orLater = `Copyright (c) {{.Year}} {{.Holder}}
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
+
+SPDX-License-Identifier: GPL-3.0-or-later`
